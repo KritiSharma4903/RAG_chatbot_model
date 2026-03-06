@@ -1,0 +1,99 @@
+Invoice 1
+
+Invoice Number: INV-1001
+
+Invoice Date: 12-01-2025
+
+Vendor: Alpha Tech Solutions
+
+Total Amount: ₹45,800
+
+Invoice 2
+
+Invoice Number: INV-1002
+
+Invoice Date: 15-01-2025
+
+Vendor: Bright Star Traders
+
+Total Amount: ₹12,450
+
+Invoice 3
+
+Invoice Number: INV-1003
+
+Invoice Date: 18-01-2025
+
+Vendor: Zenith Office Supplies
+
+Total Amount: ₹8,990
+
+Invoice 4
+
+Invoice Number: INV-1004
+
+Invoice Date: 22-01-2025
+
+Vendor: SkyHigh Electronics
+
+Total Amount: ₹78,500
+
+Invoice 5
+
+Invoice Number: INV-1005
+
+Invoice Date: 25-01-2025
+
+Vendor: Global IT Mart
+
+Total Amount: ₹32,700
+
+Invoice 6
+
+Invoice Number: INV-1006
+
+Invoice Date: 28-01-2025
+
+Vendor: Prime Hardware Hub
+
+Total Amount: ₹19,350
+
+Invoice 7
+
+Invoice Number: INV-1007
+
+Invoice Date: 02-02-2025
+
+Vendor: GreenLeaf Stationers
+
+Total Amount: ₹5,780
+
+Invoice 8
+
+Invoice Number: INV-1008
+
+Invoice Date: 05-02-2025
+
+Vendor: Metro Industrial Corp
+
+Total Amount: ₹1,24,600
+
+Invoice 9
+
+Invoice Number: INV-1009
+
+Invoice Date: 09-02-2025
+
+Vendor: Nova Digital Systems
+
+Total Amount: ₹67,890
+
+Invoice 10
+
+Invoice Number: INV-1010
+
+Invoice Date: 14-02-2025
+
+Vendor: Apex Business Solutions
+
+Total Amount: ₹23,400

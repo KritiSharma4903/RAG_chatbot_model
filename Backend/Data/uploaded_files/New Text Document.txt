@@ -1,0 +1,202 @@
+[
+  {
+    "invoice_number": "INV-1003",
+    "invoice_date": "2026-02-10",
+    "vendor_name": "Alpha Tech Solutions",
+    "total_amount": 18500.00,
+    "gst_number": "27ABCDE2345G1Z6",
+    "vendor_address": "Mumbai, India",
+    "payment_terms": "Net 15",
+    "items": [
+      {
+        "item_name": "Laptop",
+        "quantity": 5,
+        "unit_price": 3000.00,
+        "total_price": 15000.00,
+        "hsn_code": "8471"
+      },
+      {
+        "item_name": "USB Drive",
+        "quantity": 10,
+        "unit_price": 350.00,
+        "total_price": 3500.00,
+        "hsn_code": "8523"
+      }
+    ]
+  },
+  {
+    "invoice_number": "INV-1004",
+    "invoice_date": "2026-01-28",
+    "vendor_name": "Bright Office Supplies",
+    "total_amount": 4200.00,
+    "gst_number": "29ABCDE6789H1Z2",
+    "vendor_address": "Bangalore, India",
+    "payment_terms": "Net 30",
+    "items": [
+      {
+        "item_name": "Office Chair",
+        "quantity": 4,
+        "unit_price": 1000.00,
+        "total_price": 4000.00,
+        "hsn_code": "9401"
+      },
+      {
+        "item_name": "Desk Lamp",
+        "quantity": 2,
+        "unit_price": 100.00,
+        "total_price": 200.00,
+        "hsn_code": "9405"
+      }
+    ]
+  },
+  {
+    "invoice_number": "INV-1005",
+    "invoice_date": "2026-02-02",
+    "vendor_name": "Global IT Traders",
+    "total_amount": 9800.00,
+    "gst_number": "24ABCDE5678J1Z3",
+    "vendor_address": "Ahmedabad, India",
+    "payment_terms": "Advance",
+    "items": [
+      {
+        "item_name": "Server Rack",
+        "quantity": 2,
+        "unit_price": 4500.00,
+        "total_price": 9000.00,
+        "hsn_code": "8517"
+      },
+      {
+        "item_name": "LAN Cable Box",
+        "quantity": 4,
+        "unit_price": 200.00,
+        "total_price": 800.00,
+        "hsn_code": "8544"
+      }
+    ]
+  },
+  {
+    "invoice_number": "INV-1006",
+    "invoice_date": "2026-02-15",
+    "vendor_name": "Smart Devices Pvt Ltd",
+    "total_amount": 5600.00,
+    "gst_number": "33ABCDE1111K1Z8",
+    "vendor_address": "Chennai, India",
+    "payment_terms": "Net 7",
+    "items": [
+      {
+        "item_name": "Tablet",
+        "quantity": 4,
+        "unit_price": 1200.00,
+        "total_price": 4800.00,
+        "hsn_code": "8471"
+      },
+      {
+        "item_name": "Stylus Pen",
+        "quantity": 4,
+        "unit_price": 200.00,
+        "total_price": 800.00,
+        "hsn_code": "9608"
+      }
+    ]
+  },
+  {
+    "invoice_number": "INV-1007",
+    "invoice_date": "2026-02-18",
+    "vendor_name": "Digital World",
+    "total_amount": 2500.00,
+    "gst_number": "07ABCDE2222L1Z9",
+    "vendor_address": "Delhi, India",
+    "payment_terms": "Net 30",
+    "items": [
+      {
+        "item_name": "Webcam",
+        "quantity": 5,
+        "unit_price": 300.00,
+        "total_price": 1500.00,
+        "hsn_code": "8525"
+      },
+      {
+        "item_name": "Headset",
+        "quantity": 5,
+        "unit_price": 200.00,
+        "total_price": 1000.00,
+        "hsn_code": "8518"
+      }
+    ]
+  },
+  {
+    "invoice_number": "INV-1008",
+    "invoice_date": "2026-01-20",
+    "vendor_name": "TechnoMart",
+    "total_amount": 13400.00,
+    "gst_number": "19ABCDE3333M1Z0",
+    "vendor_address": "Kolkata, India",
+    "payment_terms": "Net 45",
+    "items": [
+      {
+        "item_name": "Printer",
+        "quantity": 2,
+        "unit_price": 6000.00,
+        "total_price": 12000.00,
+        "hsn_code": "8443"
+      },
+      {
+        "item_name": "Printer Cartridge",
+        "quantity": 4,
+        "unit_price": 350.00,
+        "total_price": 1400.00,
+        "hsn_code": "3215"
+      }
+    ]
+  },
+  {
+    "invoice_number": "INV-1009",
+    "invoice_date": "2026-02-05",
+    "vendor_name": "Office Hub",
+    "total_amount": 3100.00,
+    "gst_number": "06ABCDE4444N1Z1",
+    "vendor_address": "Gurgaon, India",
+    "payment_terms": "Net 10",
+    "items": [
+      {
+        "item_name": "Whiteboard",
+        "quantity": 2,
+        "unit_price": 1000.00,
+        "total_price": 2000.00,
+        "hsn_code": "9610"
+      },
+      {
+        "item_name": "Markers Pack",
+        "quantity": 5,
+        "unit_price": 220.00,
+        "total_price": 1100.00,
+        "hsn_code": "9608"
+      }
+    ]
+  },
+  {
+    "invoice_number": "INV-1010",
+    "invoice_date": "2026-02-12",
+    "vendor_name": "NextGen Technologies",
+    "total_amount": 7600.00,
+    "gst_number": "09ABCDE5555P1Z2",
+    "vendor_address": "Noida, India",
+    "payment_terms": "Advance",
+    "items": [
+      {
+        "item_name": "SSD 1TB",
+        "quantity": 4,
+        "unit_price": 1500.00,
+        "total_price": 6000.00,
+        "hsn_code": "8471"
+      },
+      {
+        "item_name": "RAM 16GB",
+        "quantity": 2,
+        "unit_price": 800.00,
+        "total_price": 1600.00,
+        "hsn_code": "8473"
+      }
+    ]
+  }
+]

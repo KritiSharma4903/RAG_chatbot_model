@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+python-multipart
+langchain
+huggingface_hub
+faiss-cpu
+python-dotenv
+pypdf
+streamlit
+requests
+langchian_community
+langchain_groq
+guardrails-ai
+
