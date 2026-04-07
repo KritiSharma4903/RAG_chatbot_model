@@ -12,3 +12,4 @@ def create_token(data: dict):
 
 def verify_token(token: str):
     return jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+

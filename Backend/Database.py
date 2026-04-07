@@ -21,3 +21,4 @@ test_data = {
 result = invoice_collection.insert_one(test_data)
 
 print("Inserted ID:", result.inserted_id)
+
