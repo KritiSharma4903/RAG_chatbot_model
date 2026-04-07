@@ -18,3 +18,5 @@ class InvoiceSchema(BaseModel):
     items: Optional[List[InvoiceItem]] = None
 
     model_config = ConfigDict(extra="allow")
+
+    

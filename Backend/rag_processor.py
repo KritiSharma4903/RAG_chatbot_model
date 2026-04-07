@@ -1,6 +1,5 @@
 import os
 from dotenv import load_dotenv
-import os
 
 load_dotenv()
 
@@ -11,14 +10,18 @@ from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 from langchain_community.document_loaders import TextLoader, PyPDFLoader
 from langchain_groq import ChatGroq
 
+# -------------------------------
 # Initialize Embeddings
+# -------------------------------
 
 embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2",
-    model_kwargs={"device": "cpu"}  # change to "cuda" if GPU available
+    model_kwargs={"device": "cpu"}
 )
 
+# -------------------------------
 # Initialize LLM
+# -------------------------------
 
 llm = ChatGroq(
     model="llama-3.3-70b-versatile",
@@ -28,10 +31,12 @@ llm = ChatGroq(
     max_retries=2,
 )
 
+# -------------------------------
 # Load Documents
+# -------------------------------
 
-def load_documents(file_path: str):
-    """Load TXT or PDF file and return documents"""
+def load_documents(file_path: str, username: str, user_role: str):
+    """Load TXT or PDF file and attach RBAC metadata"""
 
     ext = file_path.split(".")[-1].lower()
 
@@ -48,43 +53,78 @@ def load_documents(file_path: str):
 
     if not documents:
         raise ValueError("No content found in document.")
+
+    # 🔥 Attach RBAC metadata
+    for doc in documents:
+        doc.metadata["owner"] = username
+        doc.metadata["role"] = user_role
+
     return documents
 
 
-# Create FAISS Index (Persistent)
+# -------------------------------
+# Create FAISS Index
+# -------------------------------
 
 def create_rag_index(documents, persist_path=None):
     vectorstore = FAISS.from_documents(documents, embeddings)
+
     if persist_path:
         vectorstore.save_local(persist_path)
+
     return vectorstore
 
 
-# Load Existing Vector Store
+# -------------------------------
+# Load Vector Store
+# -------------------------------
 
 def load_vectorstore(persist_path: str):
-    """Load saved FAISS vector store"""
 
     if not os.path.exists(persist_path):
         raise ValueError("Vectorstore path does not exist.")
 
-    return FAISS.load_local(persist_path, embeddings,allow_dangerous_deserialization=True)
+    return FAISS.load_local(
+        persist_path,
+        embeddings,
+        allow_dangerous_deserialization=True
+    )
 
 
+# -------------------------------
+# 🔐 RBAC FILTER (IMPORTANT)
+# -------------------------------
 
-# Query RAG (Retriever + LLM)
+def get_filtered_docs(vector_store, query: str, user: dict):
+    """
+    Retrieve docs and apply RBAC filtering
+    """
 
-def query_rag(vector_store, query: str):
-    """Retrieve context and generate answer"""
+    # Step 1: Retrieve docs
+    retrieved_docs = vector_store.similarity_search(query, k=5)
 
-    # Retrieve top 3 similar docs
-    retrieved_docs = vector_store.similarity_search(query, k=3)
+    # Step 2: Apply RBAC filter
+    filtered_docs = [
+        doc for doc in retrieved_docs
+        if doc.metadata.get("owner") == user["username"]
+        or doc.metadata.get("role") == user["role"]
+    ]
 
-    if not retrieved_docs:
-        return "No relevant context found."
+    return filtered_docs
+
+
+# -------------------------------
+# Query RAG (UPDATED)
+# -------------------------------
+
+def query_rag(filtered_docs, query: str):
+    """Generate answer using filtered docs"""
+
+    if not filtered_docs:
+        return "Access denied or no relevant data found."
 
     context = "\n\n".join(
-        doc.page_content for doc in retrieved_docs
+        doc.page_content for doc in filtered_docs
     )
 
     prompt = f"""
@@ -100,25 +140,30 @@ Question:
 
 Answer:
 """
+
     response = llm.invoke(prompt)
 
     return response.content
 
 
-
+# -------------------------------
 # Debug Mode
+# -------------------------------
 
 if __name__ == "__main__":
 
     print("Running rag_processor in debug mode...")
 
-    test_file = "test.txt"  # change this manually
+    test_file = "test.txt"
 
     if not os.path.exists(test_file):
         print("Test file not found.")
         exit()
 
-    docs = load_documents(test_file)
+    # fake user
+    user = {"username": "kriti", "role": "admin"}
+
+    docs = load_documents(test_file, user["username"], user["role"])
 
     persist_path = "test_db"
 
@@ -128,6 +173,8 @@ if __name__ == "__main__":
 
     question = "Explain the main idea of this document."
 
-    answer = query_rag(vector_store, question)
+    filtered_docs = get_filtered_docs(vector_store, question, user)
+
+    answer = query_rag(filtered_docs, question)
 
     print("\nAnswer:\n", answer)
